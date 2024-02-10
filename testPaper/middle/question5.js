@@ -13,4 +13,13 @@
 
 export const changeElementText = (elementId, text) => {
   //ここに記述
+  const htmlElement = document.getElementById(elementId);
+  if (htmlElement) {
+    htmlElement.textContent = text;
+  } else {
+    const div = document.createElement("div");
+    div.id = elementId;
+    div.textContent = text;
+    document.body.appendChild(div);
+  }
 };
