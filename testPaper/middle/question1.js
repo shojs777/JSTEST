@@ -24,4 +24,22 @@
 
 export const createUserActionString = (object) => {
   //ここに記述
+const { userName, action } = object;
+
+  let firstWord;
+  let secondWord;
+
+  if (userName === undefined) {
+    firstWord = "名無しさん";
+  } else {
+    firstWord = `${userName}さん`;
+  }
+
+  if (action === undefined) {
+    secondWord = "は何もしませんでした";
+  } else {
+    secondWord = `が${action}しました`;
+  }
+
+  return firstWord + secondWord;
 };
